@@ -1,11 +1,15 @@
 repos:
-  - repo: https://github.com/dhruvalgupta2003/MCP-Server.git
-    rev: "latest"
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.2  # Use the latest stable version
     hooks:
       - id: ruff
       - id: ruff-format
-    
-  - repo: https://github.com/dhruvalgupta2003/MCP-Server.git
-    rev: "v8.3.5"
+
+  - repo: local
     hooks:
       - id: pytest
+        name: pytest
+        entry: uv run pytest tests
+        language: system
+        types: [python]
+        pass_filenames: false

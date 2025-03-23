@@ -14,12 +14,25 @@ dev = [
     "ruff>=0.11.2",
 ]
 
-[tool.ruff.lint]  
-select = ["E"]
+[tool.ruff]
+extend-exclude = [
+  "__pycache__",
+  "build",
+  "dist",
+]
+target-version = "py313"
+line-length = 90
+src = ["src", "tests"]
 
-[tool.ruff.format]
-quote-style = "single"
-indent-style = "tab"
+[tool.ruff.lint]
+extend-select = [
+  "E",
+  "W",
+]
 
 [tool.ruff.lint.per-file-ignores]
-"*.py" = ["W191"]
+"tests/*.py" = ["S101"]
+
+[tool.pytest.ini_options]
+addopts = "-vvv"
+testpaths = "tests"
