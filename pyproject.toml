@@ -1,11 +1,15 @@
 [project]
-name = "mcp"
+name = "mcp-server-project"
 version = "0.1.0"
 description = "Create our own MCP Server to interact with Mongodb Database"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.12"
 dependencies = [
+    "bs4>=0.0.2",
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.5.0",
     "pre-commit>=4.2.0",
+    "python-dotenv>=1.0.1",
 ]
 
 [dependency-groups]
