@@ -1,0 +1,11 @@
+repos:
+  - repo: https://github.com/dhruvalgupta2003/MCP-Server.git
+    rev: "latest"
+    hooks:
+      - id: ruff
+      - id: ruff-format
+    
+  - repo: https://github.com/dhruvalgupta2003/MCP-Server.git
+    rev: "v8.3.5"
+    hooks:
+      - id: pytest
